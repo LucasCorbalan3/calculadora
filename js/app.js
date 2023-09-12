@@ -45,7 +45,13 @@ for (let item of buttons) {
         screenValue += buttonText;
         screen.value = screenValue;
         return;
-
+      case "=":
+        screen.value = math.evaluate(screenValue);
+        return;
+        case "⌫":
+            screenValue = screenValue.substring(0,screen.value.length -1)
+            screen.value = screenValue
+            return;
       default:
         screenValue += buttonText;
         screen.value = screenValue;
